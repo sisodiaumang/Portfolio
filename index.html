@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Umang Sisodia — Full-Stack Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F7F7F5; --bg-2:#F0F0EE; --surface:#FFFFFF; --surface-2:#F0F0EE;
+    --text:#2B2D31; --text-dim:#5A6068;
+    --accent:#E85A3D; --accent-soft:#FDE7E1; --accent-2:#C2410C;
+    --border:#D8DADD; --live:#E85A3D;
+    --mono:'JetBrains Mono',monospace; --sans:'Inter',sans-serif;
+    --grain-opacity:0.035;
+  }
+  [data-theme="dark"]{
+    --bg:#1E2023; --bg-2:#242629; --surface:#2B2D31; --surface-2:#34363B;
+    --text:#F7F7F5; --text-dim:#9A9EA6;
+    --accent:#FF6B4A; --accent-soft:#3A2A24; --accent-2:#FFA07A;
+    --border:#3D3F45; --live:#FF6B4A;
+    --grain-opacity:0.05;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg); color:var(--text); font-family:var(--sans);
+    transition:background .35s ease, color .35s ease; -webkit-font-smoothing:antialiased;
+    position:relative;
+    cursor:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2228%22%20height%3D%2228%22%20viewBox%3D%220%200%2028%2028%22%3E%3Cpath%20d%3D%22M3%202%20L3%2022.5%20L8.2%2018%20L11.4%2025.5%20L15%2024%20L11.8%2016.7%20L19%2016.7%20Z%22%20fill%3D%22%23E85A3D%22%20stroke%3D%22black%22%20stroke-width%3D%221.4%22%20stroke-linejoin%3D%22round%22%20stroke-linecap%3D%22round%22/%3E%3C/svg%3E") 3 2, auto;
+  }
+  a, button, .btn, .theme-btn, [role="button"], input[type="submit"], .li-cta, .leet-link{
+    cursor:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2228%22%20height%3D%2228%22%20viewBox%3D%220%200%2028%2028%22%3E%3Cg%20fill%3D%22%23E85A3D%22%20stroke%3D%22black%22%20stroke-width%3D%221.3%22%20stroke-linejoin%3D%22round%22%3E%3Crect%20x%3D%229%22%20y%3D%2212.5%22%20width%3D%2212.5%22%20height%3D%2211%22%20rx%3D%224%22/%3E%3Crect%20x%3D%229%22%20y%3D%221.5%22%20width%3D%224.6%22%20height%3D%2213%22%20rx%3D%222.3%22/%3E%3Crect%20x%3D%2213.4%22%20y%3D%225%22%20width%3D%224.2%22%20height%3D%2210%22%20rx%3D%222.1%22/%3E%3Crect%20x%3D%2217.4%22%20y%3D%227%22%20width%3D%224%22%20height%3D%229%22%20rx%3D%222%22/%3E%3Crect%20x%3D%2221.2%22%20y%3D%229%22%20width%3D%223.6%22%20height%3D%228%22%20rx%3D%221.8%22/%3E%3Cpath%20d%3D%22M9%2018%20C4.5%2017%203%2019.5%204%2021.5%20C4.8%2023%207.5%2023.6%209.5%2022.5%20Z%22/%3E%3C/g%3E%3C/svg%3E") 12 2, pointer;
+  }
+  [data-theme="dark"] body{
+    cursor:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2228%22%20height%3D%2228%22%20viewBox%3D%220%200%2028%2028%22%3E%3Cpath%20d%3D%22M3%202%20L3%2022.5%20L8.2%2018%20L11.4%2025.5%20L15%2024%20L11.8%2016.7%20L19%2016.7%20Z%22%20fill%3D%22%23FF6B4A%22%20stroke%3D%22black%22%20stroke-width%3D%221.4%22%20stroke-linejoin%3D%22round%22%20stroke-linecap%3D%22round%22/%3E%3C/svg%3E") 3 2, auto;
+  }
+  [data-theme="dark"] a, [data-theme="dark"] button, [data-theme="dark"] .btn, [data-theme="dark"] .theme-btn, [data-theme="dark"] [role="button"], [data-theme="dark"] input[type="submit"], [data-theme="dark"] .li-cta, [data-theme="dark"] .leet-link{
+    cursor:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2228%22%20height%3D%2228%22%20viewBox%3D%220%200%2028%2028%22%3E%3Cg%20fill%3D%22%23FF6B4A%22%20stroke%3D%22black%22%20stroke-width%3D%221.3%22%20stroke-linejoin%3D%22round%22%3E%3Crect%20x%3D%229%22%20y%3D%2212.5%22%20width%3D%2212.5%22%20height%3D%2211%22%20rx%3D%224%22/%3E%3Crect%20x%3D%229%22%20y%3D%221.5%22%20width%3D%224.6%22%20height%3D%2213%22%20rx%3D%222.3%22/%3E%3Crect%20x%3D%2213.4%22%20y%3D%225%22%20width%3D%224.2%22%20height%3D%2210%22%20rx%3D%222.1%22/%3E%3Crect%20x%3D%2217.4%22%20y%3D%227%22%20width%3D%224%22%20height%3D%229%22%20rx%3D%222%22/%3E%3Crect%20x%3D%2221.2%22%20y%3D%229%22%20width%3D%223.6%22%20height%3D%228%22%20rx%3D%221.8%22/%3E%3Cpath%20d%3D%22M9%2018%20C4.5%2017%203%2019.5%204%2021.5%20C4.8%2023%207.5%2023.6%209.5%2022.5%20Z%22/%3E%3C/g%3E%3C/svg%3E") 12 2, pointer;
+  }
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.01ms !important; transition-duration:0.01ms !important;}
+  }
+  a{color:inherit; text-decoration:none;}
+  .wrap{max-width:1080px; margin:0 auto; padding:0 32px; position:relative;}
+
+  /* grain overlay */
+  .grain{
+    position:fixed; inset:0; z-index:200; pointer-events:none; opacity:var(--grain-opacity); mix-blend-mode:overlay;
+  }
+
+  ::selection{background:var(--accent); color:#fff;}
+
+  /* custom scrollbar */
+  ::-webkit-scrollbar{width:10px;}
+  ::-webkit-scrollbar-track{background:var(--bg);}
+  ::-webkit-scrollbar-thumb{background:var(--border); border-radius:6px;}
+  ::-webkit-scrollbar-thumb:hover{background:var(--accent);}
+
+  /* ---------- NAV ---------- */
+  nav{
+    position:sticky; top:0; z-index:100; backdrop-filter:blur(12px);
+    background:color-mix(in srgb, var(--bg) 78%, transparent);
+    border-bottom:1px solid var(--border);
+  }
+  nav .wrap{display:flex; align-items:center; justify-content:space-between; height:62px;}
+  .logo{font-family:var(--mono); font-weight:700; font-size:15px; letter-spacing:0.02em;}
+  .logo span{color:var(--accent);}
+  .nav-links{display:flex; gap:26px; font-size:13.5px; font-weight:500;}
+  .nav-links a{color:var(--text-dim); transition:color .2s; position:relative;}
+  .nav-links a::after{content:''; position:absolute; left:0; bottom:-4px; width:0; height:1px; background:var(--accent); transition:width .25s;}
+  .nav-links a:hover{color:var(--text);}
+  .nav-links a:hover::after{width:100%;}
+  .nav-right{display:flex; align-items:center; gap:16px;}
+  .theme-btn{
+    width:34px; height:34px; border-radius:8px; border:1px solid var(--border);
+    background:var(--surface); color:var(--text); cursor:pointer; font-size:14px;
+    display:flex; align-items:center; justify-content:center; transition:border-color .2s, transform .2s;
+  }
+  .theme-btn:hover{border-color:var(--accent); transform:rotate(20deg);}
+  .theme-btn:focus-visible, a:focus-visible, button:focus-visible{outline:2px solid var(--accent); outline-offset:2px;}
+
+  /* ---------- HERO w/ code-window signature ---------- */
+  header.hero{
+    position:relative; padding:120px 0 64px; border-bottom:1px solid var(--border); overflow:hidden;
+  }
+  .hero-glow{
+    position:absolute; width:520px; height:520px; border-radius:50%; top:-220px; right:-160px;
+    background:radial-gradient(circle, color-mix(in srgb, var(--accent) 20%, transparent), transparent 70%);
+    filter:blur(10px); z-index:0; pointer-events:none;
+  }
+  .hero-inner{position:relative; z-index:2;}
+  .hero-grid{display:grid; grid-template-columns:1.15fr 1fr; gap:64px; align-items:center;}
+  @media (max-width:900px){.hero-grid{grid-template-columns:1fr; gap:36px;}}
+  .status-row{
+    display:inline-flex; align-items:center; gap:10px; font-family:var(--mono);
+    font-size:12px; color:var(--text-dim); margin-bottom:30px; letter-spacing:0.02em;
+    border-left:2px solid var(--accent); padding-left:12px;
+  }
+  .dot{width:6px; height:6px; border-radius:50%; background:var(--live); box-shadow:0 0 0 3px color-mix(in srgb, var(--live) 22%, transparent); animation:pulse 2s infinite; flex-shrink:0;}
+  @keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.4;}}
+  h1{
+    font-weight:800; font-size:clamp(34px,5vw,54px); line-height:1.06; letter-spacing:-0.025em;
+  }
+  h1 .accent-wrap{position:relative; display:inline-block; color:var(--accent);}
+  h1 .swash{position:absolute; left:-1%; bottom:-9px; width:102%; height:16px; overflow:visible;}
+  h1 .swash path{fill:none; stroke:var(--accent-2); stroke-width:5; stroke-linecap:round;
+    stroke-dasharray:340; stroke-dashoffset:340; animation:draw 1s .5s ease forwards;}
+  @keyframes draw{to{stroke-dashoffset:0;}}
+  .tagline{margin-top:24px; font-size:16.5px; line-height:1.7; color:var(--text-dim); max-width:520px;}
+  .hero-cta{display:flex; align-items:center; gap:22px; margin-top:42px; flex-wrap:wrap;}
+  .btn{
+    font-weight:600; font-size:14px; padding:12px 22px; border:1.5px solid var(--border);
+    transition:all .2s; display:inline-flex; align-items:center; gap:8px; cursor:pointer;
+    border-radius:3px 10px 3px 10px;
+  }
+  .btn-primary{background:var(--accent); color:#fff; border-color:var(--accent);}
+  .btn-primary:hover{filter:brightness(1.08); transform:translateY(-1px);}
+  .btn-ghost{background:var(--surface); color:var(--text);}
+  .btn-ghost:hover{border-color:var(--accent); color:var(--accent); transform:translateY(-1px);}
+  .text-link{
+    font-family:var(--mono); font-size:13px; font-weight:500; color:var(--text-dim);
+    display:inline-flex; align-items:center; gap:6px; position:relative; padding-bottom:2px;
+  }
+  .text-link::after{content:''; position:absolute; left:0; bottom:0; width:100%; height:1px; background:var(--text-dim); transform:scaleX(0.3); transform-origin:left; transition:transform .25s, background .25s;}
+  .text-link:hover{color:var(--accent);}
+  .text-link:hover::after{transform:scaleX(1); background:var(--accent);}
+
+  /* project screenshot slideshow */
+  .site-window{
+    background:var(--surface); border:1px solid var(--border); border-radius:12px; overflow:hidden;
+    box-shadow:0 24px 60px -24px rgba(0,0,0,0.45); transform:rotate(0.6deg);
+    transition:transform .3s ease;
+  }
+  .site-window:hover{transform:rotate(0deg) translateY(-2px);}
+  .site-head{
+    display:flex; align-items:center; gap:10px; padding:10px 14px; border-bottom:1px solid var(--border);
+    background:var(--surface-2);
+  }
+  .site-dots{display:flex; gap:6px; flex-shrink:0;}
+  .site-dots span{width:9px; height:9px; border-radius:50%; background:var(--border);}
+  .site-dots span:nth-child(1){background:#D9807A;}
+  .site-dots span:nth-child(2){background:#D9B36A;}
+  .site-dots span:nth-child(3){background:#7FB88F;}
+  .site-url{
+    font-family:var(--mono); font-size:11px; color:var(--text-dim); background:var(--surface);
+    border:1px solid var(--border); border-radius:5px; padding:3px 10px; flex:1; overflow:hidden;
+    text-overflow:ellipsis; white-space:nowrap;
+  }
+  .site-body{position:relative; aspect-ratio:16/10.5; background:#0B0F17; overflow:hidden;}
+  .site-img{
+    position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:top;
+    opacity:0; transition:opacity .6s ease; pointer-events:none;
+  }
+  .site-img.active{opacity:1; pointer-events:auto;}
+
+  .site-dots-nav{position:absolute; bottom:10px; left:50%; transform:translateX(-50%); display:flex; gap:6px; z-index:4;}
+  .site-dots-nav span{width:6px; height:6px; border-radius:50%; background:rgba(255,255,255,0.45); transition:background .2s, width .2s; cursor:pointer;}
+  .site-dots-nav span.active{background:var(--accent); width:16px; border-radius:3px;}
+  .site-caption{
+    font-family:var(--mono); font-size:11px; color:var(--text-dim); padding:9px 14px; border-top:1px solid var(--border);
+    display:flex; justify-content:space-between; align-items:center;
+  }
+  .site-caption a{color:var(--accent); font-weight:600;}
+  .tok-kw{color:var(--accent); font-weight:600;}
+  .tok-fn{color:var(--accent-2);}
+  .tok-str{color:var(--live);}
+  .tok-com{color:var(--text-dim);}
+  .tok-punct{color:var(--text-dim);}
+  .cursor-blink{display:inline-block; width:7px; height:14px; background:var(--accent); vertical-align:middle; margin-left:2px; animation:blink 1s step-end infinite;}
+  @keyframes blink{50%{opacity:0;}}
+
+  /* marquee */
+  .marquee-wrap{border-bottom:1px solid var(--border); background:var(--surface); overflow:hidden; padding:16px 0;}
+  .marquee{display:flex; gap:48px; white-space:nowrap; animation:scroll 26s linear infinite; width:max-content;}
+  .marquee span{font-family:var(--mono); font-size:13px; color:var(--text-dim); letter-spacing:0.04em; display:flex; align-items:center; gap:10px;}
+  .marquee span::before{content:'◆'; color:var(--accent); font-size:8px;}
+  @keyframes scroll{from{transform:translateX(0);} to{transform:translateX(-50%);}}
+
+  /* ---------- SECTION SHELL ---------- */
+  section{padding:96px 0; border-bottom:1px solid var(--border);}
+  .reveal{opacity:0; transform:translateY(18px); transition:opacity .6s ease, transform .6s ease;}
+  .reveal.in{opacity:1; transform:translateY(0);}
+  .eyebrow{
+    font-family:var(--mono); font-size:12px; color:var(--accent); letter-spacing:0.08em;
+    text-transform:uppercase; margin-bottom:14px;
+  }
+  h2{font-size:28px; font-weight:800; letter-spacing:-0.01em; margin-bottom:36px;}
+  p.lead{font-size:15.5px; line-height:1.8; color:var(--text-dim); max-width:680px; margin-bottom:8px;}
+
+  /* ---------- SKILLS (bento) ---------- */
+  .skill-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:22px;}
+  .skill-card{
+    background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:24px 24px;
+    transition:border-color .25s, transform .25s;
+  }
+  .skill-card:hover{border-color:var(--accent); transform:translateY(-3px);}
+  .skill-card h3{font-size:11.5px; font-family:var(--mono); color:var(--text-dim); text-transform:uppercase; letter-spacing:0.06em; margin-bottom:12px;}
+  .chip-row{display:flex; flex-wrap:wrap; gap:7px;}
+  .chip{font-size:12.5px; padding:5px 10px; border-radius:6px; background:var(--surface-2); color:var(--text); border:1px solid var(--border);}
+
+  /* ---------- PROJECTS (tilt cards) ---------- */
+  .project{
+    background:var(--surface); border:1px solid var(--border); border-radius:14px;
+    padding:32px 30px 28px; margin-bottom:28px; position:relative; transform-style:preserve-3d;
+    transition:transform .15s ease, border-color .25s;
+  }
+  .project:hover{border-color:var(--accent);}
+  .project-top{display:flex; justify-content:space-between; align-items:flex-start; gap:16px; flex-wrap:wrap;}
+  .project-title{font-size:19px; font-weight:700; letter-spacing:-0.01em;}
+  .project-year{font-family:var(--mono); font-size:12px; color:var(--text-dim);}
+  .project-stack{font-family:var(--mono); font-size:12px; color:var(--accent); margin:8px 0 14px; line-height:1.6;}
+  .project ul{list-style:none; display:flex; flex-direction:column; gap:9px;}
+  .project li{font-size:14px; line-height:1.6; color:var(--text-dim); padding-left:16px; position:relative;}
+  .project li::before{content:'▸'; position:absolute; left:0; color:var(--accent); font-size:12px; top:2px;}
+  .project-links{display:flex; gap:14px; margin-top:16px;}
+  .project-links a{font-size:13px; font-weight:600; color:var(--accent); display:flex; align-items:center; gap:5px;}
+  .project-links a:hover{text-decoration:underline;}
+
+  /* ---------- LEETCODE ---------- */
+  .leet-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:26px; align-items:start;}
+  @media (max-width:900px){.leet-grid{grid-template-columns:1fr 1fr;}}
+  @media (max-width:640px){.leet-grid{grid-template-columns:1fr;}}
+
+  /* LinkedIn static card */
+  .li-card{justify-content:space-between;}
+  .li-top{display:flex; align-items:center; gap:12px;}
+  .li-avatar{
+    width:48px; height:48px; border-radius:10px; background:var(--accent-soft); color:var(--accent);
+    display:flex; align-items:center; justify-content:center; font-weight:800; font-size:17px; flex-shrink:0;
+  }
+  .li-name{font-weight:700; font-size:15px;}
+  .li-role{font-size:12.5px; color:var(--text-dim); margin-top:2px;}
+  .li-body p{font-size:13.5px; color:var(--text-dim); line-height:1.6;}
+  .li-cta{
+    display:inline-flex; align-items:center; gap:7px; font-size:13px; font-weight:600; color:#fff;
+    background:var(--accent); padding:9px 14px; border-radius:8px; transition:filter .2s; align-self:flex-start;
+  }
+  .li-cta:hover{filter:brightness(1.1);}
+  @media (max-width:640px){.leet-grid{grid-template-columns:1fr;}}
+  .leet-card{
+    background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:20px;
+    display:flex; flex-direction:column; gap:14px; transition:border-color .25s; height:100%;
+  }
+  .leet-card:hover{border-color:var(--accent);}
+  .leet-card-head{display:flex; align-items:center; justify-content:space-between;}
+  .leet-card-head h3{font-family:var(--mono); font-size:12px; text-transform:uppercase; letter-spacing:0.06em; color:var(--text-dim);}
+  .leet-img{width:100%; border-radius:10px; display:block; background:var(--surface-2); min-height:100px;}
+  .leet-fallback{
+    display:none; flex-direction:column; align-items:flex-start; gap:10px; padding:18px; font-size:13.5px; color:var(--text-dim);
+  }
+  .leet-link{font-size:13px; font-weight:600; color:var(--accent);}
+  .leet-link:hover{text-decoration:underline;}
+
+  /* ---------- EDU / ACHIEVEMENTS ---------- */
+  .edu-row{display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap; margin-bottom:6px;}
+  .edu-school{font-weight:700; font-size:16px;}
+  .edu-loc{font-family:var(--mono); font-size:12px; color:var(--text-dim);}
+  .edu-degree{font-size:14.5px; color:var(--text-dim); margin-top:4px;}
+  .cgpa-badge{
+    display:inline-block; margin-top:14px; font-family:var(--mono); font-size:13px;
+    background:var(--accent-soft); color:var(--accent); padding:6px 12px; border-radius:7px; font-weight:600;
+  }
+  .achieve-list{margin-top:20px; display:flex; flex-direction:column; gap:12px;}
+  .achieve-list li{list-style:none; font-size:14.5px; color:var(--text-dim); padding-left:18px; position:relative; line-height:1.6;}
+  .achieve-list li::before{content:'—'; position:absolute; left:0; color:var(--accent);}
+
+  /* ---------- FOOTER ---------- */
+  footer{padding:72px 0 80px; border-bottom:none;}
+  .footer-inner{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px;}
+  .footer-links{display:flex; gap:20px; font-size:14px; font-weight:600;}
+  .footer-links a{color:var(--text-dim);}
+  .footer-links a:hover{color:var(--accent);}
+  .fine-print{margin-top:40px; font-size:12px; color:var(--text-dim); font-family:var(--mono);}
+
+  @media (max-width:640px){
+    .nav-links{display:none;}
+    header.hero{padding:60px 0 32px;}
+    section{padding:64px 0;}
+  }
+</style>
+</head>
+<body>
+
+<svg class="grain" width="100%" height="100%">
+  <filter id="noiseFilter">
+    <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" stitchTiles="stitch"/>
+  </filter>
+  <rect width="100%" height="100%" filter="url(#noiseFilter)"/>
+</svg>
+
+<nav>
+  <div class="wrap">
+    <div class="logo">umang<span>.</span>dev</div>
+    <div class="nav-links">
+      <a href="#work">Work</a>
+      <a href="#skills">Skills</a>
+      <a href="#leetcode">LeetCode</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="nav-right">
+      <button class="theme-btn" id="themeToggle" aria-label="Toggle color theme">◐</button>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-glow"></div>
+
+  <div class="wrap hero-inner">
+    <div class="hero-grid">
+      <div>
+        <div class="status-row"><span class="dot"></span>open to full-stack / swe internship roles</div>
+        <h1>Building real-time systems<br>that <span class="accent-wrap">actually ship.
+          <svg class="swash" viewBox="0 0 300 16" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M4,10 C60,3 120,14 180,7 C220,2 260,11 296,6"/>
+          </svg>
+        </span></h1>
+        <p class="tagline">Umang Sisodia — Full-stack software developer engineering production web applications, real-time collaboration engines, and LLM-driven features with Next.js, Node.js, and Socket.io. B.Tech CSE (AI/ML), CGPA 9.08/10.0.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#work">View projects</a>
+          <a class="btn btn-ghost" href="https://github.com/sisodiaumang" target="_blank" rel="noopener">GitHub ↗</a>
+          <a class="text-link" href="mailto:sisodiaumang6@gmail.com">Get in touch →</a>
+        </div>
+      </div>
+
+      <div class="site-window">
+        <div class="site-head">
+          <div class="site-dots"><span></span><span></span><span></span></div>
+          <div class="site-url" id="siteUrl">codecomplex.site</div>
+        </div>
+        <div class="site-body">
+          <img class="site-img active" id="siteImg0" src="./assets/codecomplex.jpg" alt="CodeComplex live screenshot">
+          <img class="site-img" id="siteImg1" src="./assets/roomfinder.jpg" alt="Room Finder live screenshot">
+          <img class="site-img" id="siteImg2" src="./assets/blogify.jpg" alt="Blogify live screenshot">
+          <div class="site-dots-nav" id="siteDotsNav">
+            <span class="active"></span><span></span><span></span>
+          </div>
+        </div>
+        <div class="site-caption">
+          <span id="siteCaption">CodeComplex — real-time coding battles</span>
+          <a id="siteLink" href="https://codecomplex.site" target="_blank" rel="noopener">Visit ↗</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="marquee-wrap">
+  <div class="marquee" id="marquee">
+    <span>Next.js</span><span>React</span><span>Node.js</span><span>Socket.io</span><span>Redis</span><span>MongoDB</span><span>PostgreSQL</span><span>Supabase</span><span>Docker</span><span>Groq API</span><span>WebRTC</span><span>TypeScript</span>
+  </div>
+</div>
+
+<section id="work">
+  <div class="wrap">
+    <div class="eyebrow reveal">Selected work</div>
+    <h2 class="reveal">Projects</h2>
+
+    <div class="project reveal">
+      <div class="project-top">
+        <div class="project-title">CodeComplex</div>
+        <div class="project-year">2026</div>
+      </div>
+      <div class="project-stack">Next.js 15 · React 19 · Socket.io · Redis · MongoDB · Groq API · Docker · Judge0 · OCI</div>
+      <ul>
+        <li><strong>Real-Time Multiplayer Architecture:</strong> Developed a competitive coding platform supporting lobby matchmaking, head-to-head battles, and team coding modes on a Monorepo.</li>
+        <li><strong>Low-Latency Collaboration:</strong> Implemented Socket.io event-driven code synchronization and live remote cursor tracking for sub-50ms multi-user collaboration.</li>
+        <li><strong>WebRTC Audio & LLM Judging:</strong> Integrated WebRTC peer-to-peer audio channels and a Groq-powered LLM pipeline for automated DSA problem generation and Bug Fix code reviews.</li>
+        <li><strong>Cloud Infrastructure & Sandbox:</strong> Containerized with Docker and deployed on Oracle Cloud Infrastructure (OCI) running isolated Judge0 sandbox execution engines.</li>
+      </ul>
+      <div class="project-links">
+        <a href="https://github.com/sisodiaumang/CodeComplex" target="_blank" rel="noopener">GitHub ↗</a>
+        <a href="https://codecomplex.site" target="_blank" rel="noopener">Live demo ↗</a>
+      </div>
+    </div>
+
+    <div class="project reveal">
+      <div class="project-top">
+        <div class="project-title">Room Finder</div>
+        <div class="project-year">2025</div>
+      </div>
+      <div class="project-stack">React · Next.js · Supabase · PostgreSQL · Tailwind CSS · Netlify</div>
+      <ul>
+        <li><strong>Full-Stack Rental Marketplace:</strong> Engineered a dual-role rental housing platform connecting tenants and property owners with dynamic search filters and listing management.</li>
+        <li><strong>Granular Security & Auth:</strong> Implemented secure Supabase email OTP authentication with strict PostgreSQL Row-Level Security (RLS) policies protecting landlord management routes.</li>
+        <li><strong>Storage & Media Pipeline:</strong> Developed a multi-image upload pipeline utilizing Supabase Storage with dynamic image state updates and real-time listing state synchronization.</li>
+      </ul>
+      <div class="project-links">
+        <a href="https://github.com/sisodiaumang/room-finder" target="_blank" rel="noopener">GitHub ↗</a>
+        <a href="https://roomfindermark1.netlify.app/" target="_blank" rel="noopener">Live demo ↗</a>
+      </div>
+    </div>
+
+    <div class="project reveal">
+      <div class="project-top">
+        <div class="project-title">Blogify</div>
+        <div class="project-year">2025</div>
+      </div>
+      <div class="project-stack">Node.js · Express.js · MongoDB · EJS · Cloudinary · JWT</div>
+      <ul>
+        <li><strong>SSR Editorial Platform:</strong> Built a server-side rendered editorial platform with secure JWT cookie authentication, role access control, and full CRUD capability.</li>
+        <li><strong>Cloud Media Management:</strong> Integrated Multer + Cloudinary media storage pipelines with automated cleanup for orphaned media assets on article updates/deletions.</li>
+        <li><strong>Interactive Engagement:</strong> Implemented nested commenting threads, dynamic title index searching, and rich Markdown editor support.</li>
+      </ul>
+      <div class="project-links">
+        <a href="https://github.com/sisodiaumang/Blogify" target="_blank" rel="noopener">GitHub ↗</a>
+        <a href="https://blogify-for-stories.vercel.app/" target="_blank" rel="noopener">Live demo ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="eyebrow reveal">Toolbox</div>
+    <h2 class="reveal">Skills</h2>
+    <div class="skill-grid">
+      <div class="skill-card reveal">
+        <h3>Languages</h3>
+        <div class="chip-row">
+          <span class="chip">JavaScript</span><span class="chip">TypeScript</span><span class="chip">Python</span>
+          <span class="chip">C++</span><span class="chip">C</span><span class="chip">SQL</span>
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <h3>Frameworks & Libraries</h3>
+        <div class="chip-row">
+          <span class="chip">React.js</span><span class="chip">Next.js</span><span class="chip">Express.js</span>
+          <span class="chip">Node.js</span><span class="chip">Tailwind CSS</span><span class="chip">EJS</span>
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <h3>Backend & Databases</h3>
+        <div class="chip-row">
+          <span class="chip">MongoDB</span><span class="chip">Mongoose</span><span class="chip">PostgreSQL</span>
+          <span class="chip">Supabase</span><span class="chip">Redis</span>
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <h3>AI / LLM Integration</h3>
+        <div class="chip-row">
+          <span class="chip">Groq API</span><span class="chip">Prompt Engineering</span><span class="chip">LLM Evaluation Pipelines</span>
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <h3>Developer Tools</h3>
+        <div class="chip-row">
+          <span class="chip">Git</span><span class="chip">Docker</span><span class="chip">OCI</span>
+          <span class="chip">Linux</span><span class="chip">Cloudinary</span><span class="chip">Netlify</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="leetcode">
+  <div class="wrap">
+    <div class="eyebrow reveal">Problem solving</div>
+    <h2 class="reveal">LeetCode Activity</h2>
+    <p class="lead reveal" style="margin-bottom:24px;">Live stats, pulled straight from my profile.</p>
+    <div class="leet-grid reveal">
+      <div class="leet-card">
+        <div class="leet-card-head"><h3>LeetCode</h3></div>
+                <img class="leet-img" id="leetGraph" alt="LeetCode submission heatmap for yEI04gn8xc" loading="lazy">
+        <div class="leet-fallback" id="leetFallback1">
+          <span>Live card unavailable right now — view stats directly on LeetCode.</span>
+        </div>
+        <a class="leet-link" href="https://leetcode.com/u/yEI04gn8xc/" target="_blank" rel="noopener">View profile ↗</a>
+      </div>
+
+      <div class="leet-card">
+        <div class="leet-card-head"><h3>GitHub</h3></div>
+        <img class="leet-img" id="ghStats" alt="GitHub stats for sisodiaumang" loading="lazy">
+        <img class="leet-img" id="ghLangs" alt="GitHub top languages for sisodiaumang" loading="lazy">
+        <div class="leet-fallback" id="ghFallback">
+          <span>Live card unavailable right now — view the profile directly on GitHub.</span>
+        </div>
+        <a class="leet-link" href="https://github.com/sisodiaumang" target="_blank" rel="noopener">View profile ↗</a>
+      </div>
+
+      <div class="leet-card li-card">
+        <div class="leet-card-head"><h3>LinkedIn</h3></div>
+        <div class="li-top">
+          <div class="li-avatar">US</div>
+          <div>
+            <div class="li-name">Umang Sisodia</div>
+            <div class="li-role">Full-Stack Developer · B.Tech CSE (AI/ML)</div>
+          </div>
+        </div>
+        <div class="li-body">
+          <p>Building real-time systems and LLM-powered features. Open to full-stack / SWE internship roles — let's connect.</p>
+        </div>
+        <a class="li-cta" href="https://www.linkedin.com/in/sisodiaumang" target="_blank" rel="noopener">Connect on LinkedIn ↗</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="wrap">
+    <div class="eyebrow reveal">Background</div>
+    <h2 class="reveal">Education</h2>
+    <div class="edu-row reveal">
+      <div>
+        <div class="edu-school">Dr. Akhilesh Das Gupta Institute of Professional Studies (GGSIPU)</div>
+        <div class="edu-degree">B.Tech — Computer Science & Engineering (AI/ML)</div>
+      </div>
+      <div class="edu-loc">New Delhi, India<br>Aug 2024 – Expected May 2028</div>
+    </div>
+    <div class="cgpa-badge reveal">CGPA 9.08 / 10.0</div>
+    <p class="lead reveal" style="margin-top:18px;">Coursework: Data Structures & Algorithms, Object-Oriented Programming, Database Management Systems, Operating Systems, Software Engineering, Probability & Statistics.</p>
+
+    <ul class="achieve-list reveal">
+      <li>Maintained a CGPA of 9.08/10.0 in B.Tech CSE (AI/ML), consistently ranking among top academic performers.</li>
+      <li>Built and deployed 3+ production-ready full-stack applications with live demos, full documentation, and robust architectures.</li>
+    </ul>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="footer-inner reveal">
+      <div class="footer-cta">
+        <h2 style="margin-bottom:8px;">Let's build something.</h2>
+        <p class="lead">Open to full-stack and software engineering internships.</p>
+      </div>
+      <div class="footer-links">
+        <a href="mailto:sisodiaumang6@gmail.com">Email</a>
+        <a href="tel:+917011329696">Phone</a>
+        <a href="https://github.com/sisodiaumang" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+    <div class="fine-print">© 2026 Umang Sisodia · New Delhi, India</div>
+  </div>
+</footer>
+
+<script>
+  const root = document.documentElement;
+  const btn = document.getElementById('themeToggle');
+  const leetUser = 'yEI04gn8xc';
+  const ghUser = 'sisodiaumang';
+  const leetStats = document.getElementById('leetStats');
+  const leetGraph = document.getElementById('leetGraph');
+  const fb1 = document.getElementById('leetFallback1');
+  const ghStats = document.getElementById('ghStats');
+  const ghLangs = document.getElementById('ghLangs');
+  const ghFallback = document.getElementById('ghFallback');
+
+  // try each candidate URL in order; only fall back to the text link if every source fails
+  function loadWithFallback(imgEl, fallbackEl, candidates, i = 0){
+    if(i >= candidates.length){ imgEl.style.display='none'; if(fallbackEl) fallbackEl.style.display='flex'; return; }
+    const probe = new Image();
+    probe.onload = () => { imgEl.src = candidates[i]; imgEl.style.display='block'; if(fallbackEl) fallbackEl.style.display='none'; };
+    probe.onerror = () => loadWithFallback(imgEl, fallbackEl, candidates, i + 1);
+    probe.src = candidates[i];
+  }
+
+  function loadStatCards(){
+    const theme = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+
+    loadWithFallback(leetStats, fb1, [
+      `https://leetcard.jacoblin.cool/${leetUser}?theme=${theme}&font=JetBrains%20Mono`,
+      `https://github-readme-leetcode-card.romitsagu.com/${leetUser}?theme=${theme==='dark'?'dark':'light'}`
+    ]);
+    loadWithFallback(leetGraph, null, [
+      `https://leetcard.jacoblin.cool/${leetUser}?theme=${theme}&font=JetBrains%20Mono&ext=heatmap&width=500`,
+      `https://github-readme-leetcode-card.romitsagu.com/${leetUser}?theme=${theme==='dark'?'dark':'light'}&show=graph`
+    ]);
+
+    const ghTheme = theme === 'dark' ? 'dark' : 'default';
+    loadWithFallback(ghStats, ghFallback, [
+      `https://github-readme-stats.vercel.app/api?username=${ghUser}&show_icons=true&theme=${ghTheme}&hide_border=true&bg_color=00000000&title_color=FF6B4A&icon_color=FF6B4A&text_color=9A9EA6`,
+      `https://github-stats-extended.vercel.app/api?username=${ghUser}&show_icons=true&theme=${ghTheme}&hide_border=true&bg_color=00000000&title_color=FF6B4A&icon_color=FF6B4A&text_color=9A9EA6`
+    ]);
+    loadWithFallback(ghLangs, null, [
+      `https://github-readme-stats.vercel.app/api/top-langs/?username=${ghUser}&layout=compact&theme=${ghTheme}&hide_border=true&bg_color=00000000&title_color=FF6B4A&text_color=9A9EA6`,
+      `https://github-stats-extended.vercel.app/api/top-langs/?username=${ghUser}&layout=compact&theme=${ghTheme}&hide_border=true&bg_color=00000000&title_color=FF6B4A&text_color=9A9EA6`
+    ]);
+  }
+  loadStatCards();
+
+  btn.addEventListener('click', () => {
+    const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    loadStatCards();
+  });
+
+  // hero live site slideshow — high-res rendered site screenshots
+  const sites = [
+    { url: 'https://codecomplex.site', label: 'codecomplex.site', caption: 'CodeComplex — real-time coding battles' },
+    { url: 'https://roomfindermark1.netlify.app/', label: 'roomfindermark1.netlify.app', caption: 'Room Finder — dual-role rental marketplace' },
+    { url: 'https://blogify-for-stories.vercel.app/', label: 'blogify-for-stories.vercel.app', caption: 'Blogify — server-rendered blogging platform' }
+  ];
+  const siteImgs = [document.getElementById('siteImg0'), document.getElementById('siteImg1'), document.getElementById('siteImg2')];
+  const siteUrlEl = document.getElementById('siteUrl');
+  const siteCaptionEl = document.getElementById('siteCaption');
+  const siteLinkEl = document.getElementById('siteLink');
+  const siteDots = document.querySelectorAll('#siteDotsNav span');
+  let siteIdx = 0;
+
+  function showSite(i){
+    siteImgs.forEach((img, idx) => { if(img) img.classList.toggle('active', idx === i); });
+    siteDots.forEach((d, idx) => d.classList.toggle('active', idx === i));
+    siteUrlEl.textContent = sites[i].label;
+    siteCaptionEl.textContent = sites[i].caption;
+    siteLinkEl.href = sites[i].url;
+  }
+  showSite(0);
+  setInterval(() => { siteIdx = (siteIdx + 1) % sites.length; showSite(siteIdx); }, 5000);
+  siteDots.forEach((d, i) => d.addEventListener('click', () => { siteIdx = i; showSite(i); }));
+
+  // marquee: duplicate content for seamless loop
+  const marquee = document.getElementById('marquee');
+  marquee.innerHTML += marquee.innerHTML;
+
+  // scroll reveal
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:0.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // subtle tilt on project cards
+  document.querySelectorAll('.project').forEach(card=>{
+    card.addEventListener('mousemove', (e)=>{
+      const r = card.getBoundingClientRect();
+      const x = (e.clientX - r.left)/r.width - 0.5;
+      const y = (e.clientY - r.top)/r.height - 0.5;
+      card.style.transform = `perspective(800px) rotateY(${x*2.5}deg) rotateX(${-y*2.5}deg) translateY(-2px)`;
+    });
+    card.addEventListener('mouseleave', ()=>{ card.style.transform = ''; });
+  });
+</script>
+
+</body>
+</html>
