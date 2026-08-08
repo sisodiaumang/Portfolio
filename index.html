@@ -30,13 +30,13 @@
     position:relative;
     cursor:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2228%22%20height%3D%2228%22%20viewBox%3D%220%200%2028%2028%22%3E%3Cpath%20d%3D%22M3%202%20L3%2022.5%20L8.2%2018%20L11.4%2025.5%20L15%2024%20L11.8%2016.7%20L19%2016.7%20Z%22%20fill%3D%22%23E85A3D%22%20stroke%3D%22black%22%20stroke-width%3D%221.4%22%20stroke-linejoin%3D%22round%22%20stroke-linecap%3D%22round%22/%3E%3C/svg%3E") 3 2, auto;
   }
-  a, button, .btn, .theme-btn, [role="button"], input[type="submit"], .li-cta, .leet-link{
+  a, button, .btn, .theme-btn, [role="button"], input[type="submit"], .li-cta, .leet-link, .nav-resume-btn{
     cursor:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2228%22%20height%3D%2228%22%20viewBox%3D%220%200%2028%2028%22%3E%3Cg%20fill%3D%22%23E85A3D%22%20stroke%3D%22black%22%20stroke-width%3D%221.3%22%20stroke-linejoin%3D%22round%22%3E%3Crect%20x%3D%229%22%20y%3D%2212.5%22%20width%3D%2212.5%22%20height%3D%2211%22%20rx%3D%224%22/%3E%3Crect%20x%3D%229%22%20y%3D%221.5%22%20width%3D%224.6%22%20height%3D%2213%22%20rx%3D%222.3%22/%3E%3Crect%20x%3D%2213.4%22%20y%3D%225%22%20width%3D%224.2%22%20height%3D%2210%22%20rx%3D%222.1%22/%3E%3Crect%20x%3D%2217.4%22%20y%3D%227%22%20width%3D%224%22%20height%3D%229%22%20rx%3D%222%22/%3E%3Crect%20x%3D%2221.2%22%20y%3D%229%22%20width%3D%223.6%22%20height%3D%228%22%20rx%3D%221.8%22/%3E%3Cpath%20d%3D%22M9%2018%20C4.5%2017%203%2019.5%204%2021.5%20C4.8%2023%207.5%2023.6%209.5%2022.5%20Z%22/%3E%3C/g%3E%3C/svg%3E") 12 2, pointer;
   }
   [data-theme="dark"] body{
     cursor:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2228%22%20height%3D%2228%22%20viewBox%3D%220%200%2028%2028%22%3E%3Cpath%20d%3D%22M3%202%20L3%2022.5%20L8.2%2018%20L11.4%2025.5%20L15%2024%20L11.8%2016.7%20L19%2016.7%20Z%22%20fill%3D%22%23FF6B4A%22%20stroke%3D%22black%22%20stroke-width%3D%221.4%22%20stroke-linejoin%3D%22round%22%20stroke-linecap%3D%22round%22/%3E%3C/svg%3E") 3 2, auto;
   }
-  [data-theme="dark"] a, [data-theme="dark"] button, [data-theme="dark"] .btn, [data-theme="dark"] .theme-btn, [data-theme="dark"] [role="button"], [data-theme="dark"] input[type="submit"], [data-theme="dark"] .li-cta, [data-theme="dark"] .leet-link{
+  [data-theme="dark"] a, [data-theme="dark"] button, [data-theme="dark"] .btn, [data-theme="dark"] .theme-btn, [data-theme="dark"] [role="button"], [data-theme="dark"] input[type="submit"], [data-theme="dark"] .li-cta, [data-theme="dark"] .leet-link, [data-theme="dark"] .nav-resume-btn{
     cursor:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2228%22%20height%3D%2228%22%20viewBox%3D%220%200%2028%2028%22%3E%3Cg%20fill%3D%22%23FF6B4A%22%20stroke%3D%22black%22%20stroke-width%3D%221.3%22%20stroke-linejoin%3D%22round%22%3E%3Crect%20x%3D%229%22%20y%3D%2212.5%22%20width%3D%2212.5%22%20height%3D%2211%22%20rx%3D%224%22/%3E%3Crect%20x%3D%229%22%20y%3D%221.5%22%20width%3D%224.6%22%20height%3D%2213%22%20rx%3D%222.3%22/%3E%3Crect%20x%3D%2213.4%22%20y%3D%225%22%20width%3D%224.2%22%20height%3D%2210%22%20rx%3D%222.1%22/%3E%3Crect%20x%3D%2217.4%22%20y%3D%227%22%20width%3D%224%22%20height%3D%229%22%20rx%3D%222%22/%3E%3Crect%20x%3D%2221.2%22%20y%3D%229%22%20width%3D%223.6%22%20height%3D%228%22%20rx%3D%221.8%22/%3E%3Cpath%20d%3D%22M9%2018%20C4.5%2017%203%2019.5%204%2021.5%20C4.8%2023%207.5%2023.6%209.5%2022.5%20Z%22/%3E%3C/g%3E%3C/svg%3E") 12 2, pointer;
   }
   @media (prefers-reduced-motion: reduce){
@@ -118,8 +118,24 @@
   }
   .btn-primary{background:var(--accent); color:#fff; border-color:var(--accent);}
   .btn-primary:hover{filter:brightness(1.08); transform:translateY(-1px);}
+  .btn-resume{
+    background:var(--accent-soft); color:var(--accent); border-color:var(--accent);
+  }
+  .btn-resume:hover{
+    background:var(--accent); color:#fff; transform:translateY(-1px);
+    box-shadow:0 4px 14px color-mix(in srgb, var(--accent) 35%, transparent);
+  }
   .btn-ghost{background:var(--surface); color:var(--text);}
   .btn-ghost:hover{border-color:var(--accent); color:var(--accent); transform:translateY(-1px);}
+  .nav-resume-btn{
+    font-family:var(--sans); font-size:12.5px; font-weight:600; padding:6px 13px;
+    border-radius:6px; background:var(--accent-soft); color:var(--accent);
+    border:1px solid color-mix(in srgb, var(--accent) 40%, transparent);
+    display:inline-flex; align-items:center; gap:6px; transition:all .2s ease;
+  }
+  .nav-resume-btn:hover{
+    background:var(--accent); color:#fff; border-color:var(--accent); transform:translateY(-1px);
+  }
   .text-link{
     font-family:var(--mono); font-size:13px; font-weight:500; color:var(--text-dim);
     display:inline-flex; align-items:center; gap:6px; position:relative; padding-bottom:2px;
@@ -275,6 +291,19 @@
   .footer-links a:hover{color:var(--accent);}
   .fine-print{margin-top:40px; font-size:12px; color:var(--text-dim); font-family:var(--mono);}
 
+  /* toast notification */
+  .toast {
+    position: fixed; bottom: 28px; right: 28px; z-index: 1000;
+    background: var(--surface); color: var(--text); border: 1.5px solid var(--accent);
+    padding: 12px 20px; border-radius: 10px; font-size: 13.5px; font-family: var(--mono);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25); display: flex; align-items: center; gap: 10px;
+    transform: translateY(100px); opacity: 0; transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    pointer-events: none;
+  }
+  .toast.show {
+    transform: translateY(0); opacity: 1; pointer-events: auto;
+  }
+
   @media (max-width:640px){
     .nav-links{display:none;}
     header.hero{padding:60px 0 32px;}
@@ -302,6 +331,10 @@
       <a href="#contact">Contact</a>
     </div>
     <div class="nav-right">
+      <a class="nav-resume-btn" href="./assets/Umang_Sisodia_Resume.pdf" download="Umang_Sisodia_Resume.pdf" target="_blank" title="Download Resume PDF">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        <span>Resume</span>
+      </a>
       <button class="theme-btn" id="themeToggle" aria-label="Toggle color theme">◐</button>
     </div>
   </div>
@@ -322,8 +355,12 @@
         <p class="tagline">Umang Sisodia — Full-stack software developer engineering production web applications, real-time collaboration engines, and LLM-driven features with Next.js, Node.js, and Socket.io. B.Tech CSE (AI/ML), CGPA 9.08/10.0.</p>
         <div class="hero-cta">
           <a class="btn btn-primary" href="#work">View projects</a>
+          <a class="btn btn-resume" href="./assets/Umang_Sisodia_Resume.pdf" download="Umang_Sisodia_Resume.pdf" target="_blank">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Resume PDF
+          </a>
           <a class="btn btn-ghost" href="https://github.com/sisodiaumang" target="_blank" rel="noopener">GitHub ↗</a>
-          <a class="text-link" href="mailto:sisodiaumang6@gmail.com">Get in touch →</a>
+          <a class="text-link" href="#contact">Get in touch →</a>
         </div>
       </div>
 
@@ -528,9 +565,19 @@
       <div class="footer-cta">
         <h2 style="margin-bottom:8px;">Let's build something.</h2>
         <p class="lead">Open to full-stack and software engineering internships.</p>
+        <div class="contact-actions" style="margin-top:20px; display:flex; flex-wrap:wrap; gap:12px; align-items:center;">
+          <button class="btn btn-primary" onclick="copyEmail()" id="copyEmailBtn" style="font-size:13.5px;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            <span>Copy Email</span>
+          </button>
+          <a class="btn btn-ghost" href="https://mail.google.com/mail/?view=cm&fs=1&to=sisodiaumang6@gmail.com" target="_blank" rel="noopener" style="font-size:13.5px;">
+            Open Gmail ↗
+          </a>
+        </div>
       </div>
       <div class="footer-links">
-        <a href="mailto:sisodiaumang6@gmail.com">Email</a>
+        <a href="./assets/Umang_Sisodia_Resume.pdf" download="Umang_Sisodia_Resume.pdf" target="_blank">Resume PDF ↗</a>
+        <a href="javascript:void(0)" onclick="copyEmail()">Email</a>
         <a href="tel:+917011329696">Phone</a>
         <a href="https://github.com/sisodiaumang" target="_blank" rel="noopener">GitHub</a>
       </div>
@@ -538,6 +585,11 @@
     <div class="fine-print">© 2026 Umang Sisodia · New Delhi, India</div>
   </div>
 </footer>
+
+<div class="toast" id="toast">
+  <span style="color:var(--accent);">✓</span>
+  <span id="toastMsg">Email copied to clipboard!</span>
+</div>
 
 <script>
   const root = document.documentElement;
@@ -634,6 +686,24 @@
     });
     card.addEventListener('mouseleave', ()=>{ card.style.transform = ''; });
   });
+
+  function copyEmail(){
+    const email = 'sisodiaumang6@gmail.com';
+    navigator.clipboard.writeText(email).then(() => {
+      showToast('📋 Copied sisodiaumang6@gmail.com to clipboard!');
+    }).catch(() => {
+      showToast('Email: sisodiaumang6@gmail.com');
+    });
+  }
+
+  function showToast(msg){
+    const toast = document.getElementById('toast');
+    const toastMsg = document.getElementById('toastMsg');
+    if(!toast) return;
+    toastMsg.textContent = msg;
+    toast.classList.add('show');
+    setTimeout(() => { toast.classList.remove('show'); }, 3500);
+  }
 </script>
 
 </body>
