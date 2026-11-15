@@ -352,7 +352,7 @@
             <path d="M4,10 C60,3 120,14 180,7 C220,2 260,11 296,6"/>
           </svg>
         </span></h1>
-        <p class="tagline">Umang Sisodia — Full-stack software developer engineering production web applications, real-time collaboration engines, and LLM-driven features with Next.js, Node.js, and Socket.io. B.Tech CSE (AI/ML), CGPA 9.08/10.0.</p>
+        <p class="tagline">Umang Sisodia — Full-stack developer engineering production web apps, real-time collaboration engines, and LLM-powered features with Next.js, Node.js, and Socket.io. B.Tech CSE (AI/ML), CGPA 9.08/10.0.</p>
         <div class="hero-cta">
           <a class="btn btn-primary" href="#work">View projects</a>
           <a class="btn btn-resume" href="./assets/Umang_Sisodia_Resume.pdf" download="Umang_Sisodia_Resume.pdf" target="_blank">
@@ -371,7 +371,7 @@
         </div>
         <div class="site-body">
           <img class="site-img active" id="siteImg0" src="./assets/codecomplex.jpg" alt="CodeComplex live screenshot">
-          <img class="site-img" id="siteImg1" src="./assets/roomfinder.jpg" alt="Room Finder live screenshot">
+          <img class="site-img" id="siteImg1" src="./assets/distributed_cache.jpg" alt="Self-Healing Distributed Cache architecture">
           <img class="site-img" id="siteImg2" src="./assets/blogify.jpg" alt="Blogify live screenshot">
           <div class="site-dots-nav" id="siteDotsNav">
             <span class="active"></span><span></span><span></span>
@@ -388,7 +388,7 @@
 
 <div class="marquee-wrap">
   <div class="marquee" id="marquee">
-    <span>Next.js</span><span>React</span><span>Node.js</span><span>Socket.io</span><span>Redis</span><span>MongoDB</span><span>PostgreSQL</span><span>Supabase</span><span>Docker</span><span>Groq API</span><span>WebRTC</span><span>TypeScript</span>
+    <span>Next.js 15</span><span>React 19</span><span>TypeScript</span><span>Node.js</span><span>Socket.io</span><span>Redis</span><span>Consistent Hashing</span><span>Docker</span><span>MongoDB</span><span>PostgreSQL</span><span>Groq API</span><span>REST APIs</span><span>WebRTC</span>
   </div>
 </div>
 
@@ -402,12 +402,12 @@
         <div class="project-title">CodeComplex</div>
         <div class="project-year">2026</div>
       </div>
-      <div class="project-stack">Next.js 15 · React 19 · Socket.io · Redis · MongoDB · Groq API · Docker · Judge0 · OCI</div>
+      <div class="project-stack">Next.js 15 · React 19 · Socket.io · Redis · MongoDB · Groq API · Docker · Judge0 · OCI · Tailwind CSS v4</div>
       <ul>
-        <li><strong>Real-Time Multiplayer Architecture:</strong> Developed a competitive coding platform supporting lobby matchmaking, head-to-head battles, and team coding modes on a Monorepo.</li>
-        <li><strong>Low-Latency Collaboration:</strong> Implemented Socket.io event-driven code synchronization and live remote cursor tracking for sub-50ms multi-user collaboration.</li>
-        <li><strong>WebRTC Audio & LLM Judging:</strong> Integrated WebRTC peer-to-peer audio channels and a Groq-powered LLM pipeline for automated DSA problem generation and Bug Fix code reviews.</li>
-        <li><strong>Cloud Infrastructure & Sandbox:</strong> Containerized with Docker and deployed on Oracle Cloud Infrastructure (OCI) running isolated Judge0 sandbox execution engines.</li>
+        <li><strong>5 Battle Modes & RESTful Architecture:</strong> Built a real-time multiplayer coding platform with 5 battle modes (DSA, Bug Fix, Backend, Frontend, Prompt War), matchmaking lobbies, and live execution streams, backed by a RESTful API built with TypeScript and Express in a Next.js monorepo.</li>
+        <li><strong>Collaborative Real-Time Editing:</strong> Built real-time collaborative code editing by syncing editor changes (<code>battle:code-sync</code>) and teammate cursor positions (<code>battle:cursor-sync</code>) over Socket.io.</li>
+        <li><strong>WebRTC Voice & Automated DSA Pipeline:</strong> Built a WebRTC signaling server (<code>battle:voice:signal</code>) for peer-to-peer team voice chat with room and team boundary checks; built an LLM content pipeline with the Groq API that auto-generates DSA questions with test cases, each verified by a validation script before entering the question bank.</li>
+        <li><strong>AI Review Agent & Cloud Containerization:</strong> Built an AI code review agent with the Groq API scoring user submissions on correctness and code quality for battle judging; added cookie-parsed JWT auth and 600ms event throttling; deployed on Oracle Cloud Infrastructure (OCI) using 4 separate Docker containers: MongoDB, Judge0, frontend, and backend.</li>
       </ul>
       <div class="project-links">
         <a href="https://github.com/sisodiaumang/CodeComplex" target="_blank" rel="noopener">GitHub ↗</a>
@@ -417,18 +417,17 @@
 
     <div class="project reveal">
       <div class="project-top">
-        <div class="project-title">Room Finder</div>
-        <div class="project-year">2025</div>
+        <div class="project-title">Self-Healing Distributed Cache</div>
+        <div class="project-year">2026</div>
       </div>
-      <div class="project-stack">React · Next.js · Supabase · PostgreSQL · Tailwind CSS · Netlify</div>
+      <div class="project-stack">TypeScript · Node.js · Express · Docker · Docker Compose</div>
       <ul>
-        <li><strong>Full-Stack Rental Marketplace:</strong> Engineered a dual-role rental housing platform connecting tenants and property owners with dynamic search filters and listing management.</li>
-        <li><strong>Granular Security & Auth:</strong> Implemented secure Supabase email OTP authentication with strict PostgreSQL Row-Level Security (RLS) policies protecting landlord management routes.</li>
-        <li><strong>Storage & Media Pipeline:</strong> Developed a multi-image upload pipeline utilizing Supabase Storage with dynamic image state updates and real-time listing state synchronization.</li>
+        <li><strong>Consistent Hashing with Virtual Nodes:</strong> Built a distributed in-memory cache using consistent hashing with virtual nodes to distribute keys across nodes, minimizing key movement on topology changes (~26.8% of keys moved scaling 3 → 4 nodes, close to theoretical ~25%).</li>
+        <li><strong>Self-Healing Failure Recovery:</strong> Implemented self-healing failure recovery where periodic health checks detect and remove failed nodes from the hash ring, then automatically rebalance and resync data to nodes when they recover.</li>
+        <li><strong>Replication & O(1) LRU Cache:</strong> Built configurable replication with replica fallback on reads and an O(1) LRU cache (HashMap + doubly linked list) with TTL support preserved during synchronization; containerized each node with Docker Compose and built a live dashboard to simulate failure/recovery.</li>
       </ul>
       <div class="project-links">
-        <a href="https://github.com/sisodiaumang/room-finder" target="_blank" rel="noopener">GitHub ↗</a>
-        <a href="https://roomfindermark1.netlify.app/" target="_blank" rel="noopener">Live demo ↗</a>
+        <a href="https://github.com/sisodiaumang/Self-Healing-Distributed-Cache" target="_blank" rel="noopener">GitHub ↗</a>
       </div>
     </div>
 
@@ -439,9 +438,9 @@
       </div>
       <div class="project-stack">Node.js · Express.js · MongoDB · EJS · Cloudinary · JWT</div>
       <ul>
-        <li><strong>SSR Editorial Platform:</strong> Built a server-side rendered editorial platform with secure JWT cookie authentication, role access control, and full CRUD capability.</li>
-        <li><strong>Cloud Media Management:</strong> Integrated Multer + Cloudinary media storage pipelines with automated cleanup for orphaned media assets on article updates/deletions.</li>
-        <li><strong>Interactive Engagement:</strong> Implemented nested commenting threads, dynamic title index searching, and rich Markdown editor support.</li>
+        <li><strong>SSR Editorial Platform:</strong> Developed a server-side rendered blogging platform supporting secure cookie-based session management, full CRUD operations, and password reset flows.</li>
+        <li><strong>Automated Media Lifecycle:</strong> Built an image upload pipeline utilizing Multer and Cloudinary that automatically cleans up orphaned images upon blog post updates or removals.</li>
+        <li><strong>Community & Search Indexing:</strong> Designed interactive community features including real-time nested comments/replies, markdown editor support, and dynamic search indexing on MongoDB for title-based queries.</li>
       </ul>
       <div class="project-links">
         <a href="https://github.com/sisodiaumang/Blogify" target="_blank" rel="noopener">GitHub ↗</a>
@@ -460,14 +459,20 @@
         <h3>Languages</h3>
         <div class="chip-row">
           <span class="chip">JavaScript</span><span class="chip">TypeScript</span><span class="chip">Python</span>
-          <span class="chip">C++</span><span class="chip">C</span><span class="chip">SQL</span>
+          <span class="chip">C++</span><span class="chip">C</span><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">SQL</span>
         </div>
       </div>
       <div class="skill-card reveal">
         <h3>Frameworks & Libraries</h3>
         <div class="chip-row">
           <span class="chip">React.js</span><span class="chip">Next.js</span><span class="chip">Express.js</span>
-          <span class="chip">Node.js</span><span class="chip">Tailwind CSS</span><span class="chip">EJS</span>
+          <span class="chip">Node.js</span><span class="chip">EJS</span><span class="chip">Tailwind CSS</span>
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <h3>APIs</h3>
+        <div class="chip-row">
+          <span class="chip">RESTful API Design</span><span class="chip">REST API Development</span>
         </div>
       </div>
       <div class="skill-card reveal">
@@ -486,7 +491,7 @@
       <div class="skill-card reveal">
         <h3>Developer Tools</h3>
         <div class="chip-row">
-          <span class="chip">Git</span><span class="chip">Docker</span><span class="chip">OCI</span>
+          <span class="chip">Git</span><span class="chip">GitHub</span><span class="chip">Docker</span><span class="chip">OCI</span>
           <span class="chip">Linux</span><span class="chip">Cloudinary</span><span class="chip">Netlify</span>
         </div>
       </div>
@@ -553,8 +558,8 @@
     <p class="lead reveal" style="margin-top:18px;">Coursework: Data Structures & Algorithms, Object-Oriented Programming, Database Management Systems, Operating Systems, Software Engineering, Probability & Statistics.</p>
 
     <ul class="achieve-list reveal">
-      <li>Maintained a CGPA of 9.08/10.0 in B.Tech CSE (AI/ML), consistently ranking among top academic performers.</li>
-      <li>Built and deployed 3+ production-ready full-stack applications with live demos, full documentation, and robust architectures.</li>
+      <li>Maintained a CGPA of 9.078/10.0 in B.Tech CSE (AI/ML specialization) at GGSIPU, consistently ranking among top academic performers.</li>
+      <li>Built and deployed 3 full-stack applications, each with a live demo and public GitHub repo.</li>
     </ul>
   </div>
 </section>
@@ -645,7 +650,7 @@
   // hero live site slideshow — high-res rendered site screenshots
   const sites = [
     { url: 'https://codecomplex.site', label: 'codecomplex.site', caption: 'CodeComplex — real-time coding battles' },
-    { url: 'https://roomfindermark1.netlify.app/', label: 'roomfindermark1.netlify.app', caption: 'Room Finder — dual-role rental marketplace' },
+    { url: 'https://github.com/sisodiaumang/Self-Healing-Distributed-Cache', label: 'github.com/sisodiaumang/Self-Healing-Distributed-Cache', caption: 'Self-Healing Distributed Cache — consistent hashing & fault tolerance' },
     { url: 'https://blogify-for-stories.vercel.app/', label: 'blogify-for-stories.vercel.app', caption: 'Blogify — server-rendered blogging platform' }
   ];
   const siteImgs = [document.getElementById('siteImg0'), document.getElementById('siteImg1'), document.getElementById('siteImg2')];
